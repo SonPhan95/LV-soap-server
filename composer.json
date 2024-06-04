@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0|^8.1",
-        "laminas/laminas-soap": "^2.10",
+        "php": "^7.4|^8.0|^8.1|^8.2",
+        "laminas/laminas-soap": "^2.11",
         "ext-soap": "*"
     },
     "require-dev": {
@@ -37,7 +37,6 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true
