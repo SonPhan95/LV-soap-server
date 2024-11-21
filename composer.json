@@ -1,11 +1,11 @@
 {
-    "name": "kduma/laravel-soap-server",
-    "description": "Laravel SOAP service server",
+    "name": "son/laravel-soap-server",
+    "description": "Laravel SOAP service server develop by kduma and forked by son",
     "keywords": [
-        "kduma",
+        "son",
         "laravel-soap-server"
     ],
-    "homepage": "https://github.com/kduma/laravel-soap-server",
+    "homepage": "https://github.com/SonPhan95/LV-soap-server",
     "license": "MIT",
     "type": "library",
     "authors": [
