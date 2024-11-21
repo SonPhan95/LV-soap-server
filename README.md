@@ -5,14 +5,14 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/kduma/laravel-soap-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/kduma/laravel-soap-server)
 [![Total Downloads](https://img.shields.io/packagist/dt/kduma/laravel-soap-server.svg?style=flat-square)](https://packagist.org/packages/kduma/laravel-soap-server)
 
-Laravel SOAP service server
+Laravel SOAP service server develop by Kduma and forked by Son
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require kduma/laravel-soap-server
+composer require son/laravel-soap-server
 ```
 
 ## Usage
