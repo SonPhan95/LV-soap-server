@@ -1,8 +1,8 @@
 {
-    "name": "son/laravel-soap-server",
+    "name": "sekison/laravel-soap-server",
     "description": "Laravel SOAP service server develop by kduma and forked by son",
     "keywords": [
-        "son",
+        "sekison",
         "laravel-soap-server"
     ],
     "homepage": "https://github.com/SonPhan95/LV-soap-server",

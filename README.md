@@ -12,7 +12,7 @@ Laravel SOAP service server develop by Kduma and forked by Son
 You can install the package via composer:
 
 ```bash
-composer require son/laravel-soap-server
+composer require sekison/laravel-soap-server
 ```
 
 ## Usage
