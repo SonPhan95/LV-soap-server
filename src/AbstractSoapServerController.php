@@ -32,6 +32,11 @@ abstract class AbstractSoapServerController extends BaseController
     abstract protected function getWsdlUri(): string;
 
     /**
+     * @return string TargetNamespace of WSDL
+     */
+    abstract protected function getTargetNamespace(): string;
+
+    /**
      * @return string Service name (Defaults to server host class basename)
      */
     protected function getName(): string
@@ -116,7 +121,7 @@ abstract class AbstractSoapServerController extends BaseController
         $this->disableSoapCacheWhenNeeded();
 
         // Create wsdl object and register type(s).
-        $wsdl = new Wsdl('wsdl', $this->getEndpoint());
+        $wsdl = new Wsdl('wsdl', $this->getEndpoint(), null, [], $this->getTargetNamespace());
 
         $strategy = tap($this->getStrategy(), function (ComplexTypeStrategyInterface $strategy) use ($wsdl) {
             // Set type(s) on strategy object.
@@ -130,7 +135,7 @@ abstract class AbstractSoapServerController extends BaseController
         collect($this->getTypes())->each(fn($class, $key) => $wsdl->addType($class, $key));
 
         // Auto-discover and output xml.
-        $autodiscover = new AutoDiscover($strategy, $this->getEndpoint(), null, array_flip($this->getClassmap()));
+        $autodiscover = new AutoDiscover($strategy, $this->getEndpoint(), null, array_flip($this->getClassmap()), $this->getTargetNamespace());
 
         $autodiscover->setBindingStyle(['style' => 'document']);
         $autodiscover->setOperationBodyStyle(['use' => 'literal']);
@@ -140,7 +145,6 @@ abstract class AbstractSoapServerController extends BaseController
         $autodiscover->setDiscoveryStrategy(new BetterReflectionDiscovery());
 
         $dom = $autodiscover->generate()->toDomDocument();
-
         if($this->getFormatWsdlOutput()){
             $dom->preserveWhiteSpace = false;
             $dom->formatOutput = true;
