@@ -1,9 +1,4 @@
-# laravel-soap-server
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/kduma/laravel-soap-server.svg?style=flat-square)](https://packagist.org/packages/kduma/laravel-soap-server)
-[![Build Status](https://img.shields.io/travis/kduma/laravel-soap-server/master.svg?style=flat-square)](https://travis-ci.org/kduma/laravel-soap-server)
-[![Quality Score](https://img.shields.io/scrutinizer/g/kduma/laravel-soap-server.svg?style=flat-square)](https://scrutinizer-ci.com/g/kduma/laravel-soap-server)
-[![Total Downloads](https://img.shields.io/packagist/dt/kduma/laravel-soap-server.svg?style=flat-square)](https://packagist.org/packages/kduma/laravel-soap-server)
+# laravel-soap-server for php 7.4
 
 Laravel SOAP service server develop by Kduma and forked by Son
 
@@ -108,6 +103,11 @@ class MySoapController extends \KDuma\SoapServer\AbstractSoapServerController
         return [
             'SoapPerson' => Person::class,
         ];
+    }
+
+    protected function getTargetNamespace(): string
+    {
+        return 'urn:WashOut';
     }
 }
 ```
